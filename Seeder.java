@@ -7,6 +7,12 @@ import com.github.javafaker.Faker;
 import java.sql.SQLException;
 import java.sql.Statement;
 public class Seeder {
+       
+    public Seeder(random, connection, faker){
+        this.random=random;
+        this.connection=connection;
+        this.faker=faker;
+    }
 
     public static void createUserTable() {
         Statement statement = null;
