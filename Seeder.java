@@ -47,6 +47,44 @@ public class Seeder {
         }
 
     }
+    public static void createWebPageTable(){
+            Statement statement = null;
+            try {
+
+                statement.executeQuery("CREATE TABLE tbl_webpage ID INTEGER PRIMARY KEY, URL VARCHAR, " +
+                        "AUTHOR VARCHAR FOREIGN KEY, Content VARCHAR, popularity FLOAT;");
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+    }
+
+    public static void seeder.insertFakeWebPage(200){
+        Faker faker = new Faker();
+        int id = 0;
+        int author;
+
+
+        Statement statement = null;
+        for(int i = 0; i < n; i++){
+
+            String content = faker.chuckNorris();
+
+            double randNumber = Math.random();
+            d = randNumber * 100;
+            int popularity = (int)d + 1;
+
+            URL myURL = new URL("http://example.com/");
+            
+            statement.executeQuery("INSERT INTO tbl_webpage VALUES" + "("+id+", "+author+", "+url+", "+content+", "+
+                    popularity);
+
+            id++;
+        }
+
+    }
 
 }
 
