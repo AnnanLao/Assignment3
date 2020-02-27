@@ -61,24 +61,21 @@ public class Seeder {
 
     }
 
-    public static void seeder.insertFakeWebPage(200){
+    public static void seeder.insertFakeUsersWithWebPage(int n){
         Faker faker = new Faker();
         int id = 0;
         int author;
-
-
         Statement statement = null;
         for(int i = 0; i < n; i++){
-
+            
+            insertFakeUsers(1);
             String content = faker.chuckNorris();
-
             double randNumber = Math.random();
             d = randNumber * 100;
             int popularity = (int)d + 1;
-
             URL myURL = new URL("http://example.com/");
             
-            statement.executeQuery("INSERT INTO tbl_webpage VALUES" + "("+id+", "+author+", "+url+", "+content+", "+
+            statement.executeQuery("INSERT INTO tbl_webpage VALUES" + "("+id+", "+author+", "+myURL+", "+content+", "+
                     popularity);
 
             id++;
